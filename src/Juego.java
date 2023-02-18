@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Juego {
     public static void main(String[] args) {
-
+        // Crear dos objetos Posicion
         Posicion PrimeraPosicion = new Posicion();
         // Crear dos objetos Pieza
         Pieza pieza1 = new Pieza("blanco",  PrimeraPosicion , false);
@@ -48,12 +48,14 @@ public class Juego {
         private Posicion posicion;
         private boolean capturada;
 
+        //construtor
         public Pieza(String color, Posicion posicion, boolean capturada) {
             this.color = color;
             this.posicion = posicion;
             this.capturada = capturada;
         }
 
+        //metodos get y set
         public String getColor() {
             return color;
         }
@@ -78,6 +80,7 @@ public class Juego {
             this.capturada = capturada;
         }
 
+        //metodo tostring
         @Override
         public String toString() {
             return "Pieza {color=" + color + ", posición=" + posicion + ", capturada=" + capturada + "}";
@@ -90,6 +93,7 @@ public class Juego {
         private int fila;
         private int columna;
 
+        //Constructores
         public Posicion() {
             this.fila = 1;
             this.columna = 1;
@@ -100,6 +104,7 @@ public class Juego {
             this.columna = columna;
         }
 
+        //metodos get y set
         public int getFila() {
             return fila;
         }
@@ -116,6 +121,7 @@ public class Juego {
             this.columna = columna;
         }
 
+        //metodo tostring
         @Override
         public String toString() {
             return "Posición {fila=" + fila + ", columna=" + columna + "}";
@@ -128,11 +134,14 @@ public class Juego {
         private int tamaño;
         private static final int MAX_TAMAÑO = 8;
 
+
+        //constructores
         public Tablero(int tamaño) {
             this.tamaño = tamaño;
             this.piezas = new Pieza[tamaño][tamaño];
         }
 
+        //metodo tostring imprimir tablero
         public String toString() {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < tamaño; i++) {
@@ -148,6 +157,8 @@ public class Juego {
             }
             return sb.toString();
         }
+
+        //funcionalidades
         public void colocarPieza(Pieza pieza, int fila, int columna) {
             piezas[fila][columna] = pieza;
             pieza.setPosicion(new Posicion(fila, columna));
