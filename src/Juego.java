@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.*;
 
 public class Juego {
-    public void main(String[] args) {
+    public static void main(String[] args) {
 
         Posicion PrimeraPosicion = new Posicion();
         // Crear dos objetos Pieza
@@ -43,7 +43,7 @@ public class Juego {
 
     //Clase Pieza Ej1.
 
-    public class Pieza {
+    public static class Pieza {
         private String color;
         private Posicion posicion;
         private boolean capturada;
@@ -86,7 +86,7 @@ public class Juego {
 
     //Clase Posicion Ej2.
 
-    public  class Posicion {
+    public static class Posicion {
         private int fila;
         private int columna;
 
@@ -123,7 +123,7 @@ public class Juego {
     }
 
     // Clase Tablero Ej3.
-    public class Tablero {
+    public static class Tablero {
         private Pieza[][] piezas;
         private int tamaño;
         private static final int MAX_TAMAÑO = 8;
